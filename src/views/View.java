@@ -29,9 +29,9 @@ public class View {
     }
 
     public void printBoard() {
-        for(int i = 0; i < this.rows; i++){
-            for(int j = 0; j < this.columns; j++){
-                System.out.print(this.board[i][j].printToken());
+        for(int i = 0; i < this.controller.rows; i++){
+            for(int j = 0; j < this.controller.columns; j++){
+                System.out.print(this.controller.board[i][j].printToken());
             }
             System.out.println();
         }
@@ -52,7 +52,7 @@ public class View {
         }
         int column = this.scanner.nextInt();
 
-        if(this.controller.isTaken()){
+        if(this.controller.isTaken(row, column)){
             System.out.println("That space is taken");
             setupGame();
         }
